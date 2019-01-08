@@ -612,8 +612,7 @@ Suggested values include: 1] internal; 2] external; 3] conjecture</xs:documentat
   <xs:attributeGroup name="att.global.rendition.attribute.rendition">
     <xs:attribute name="rendition">
       <xs:annotation>
-        <xs:documentation>points to a description of the rendering or presentation used for this element in the source text.
-Suggested values include: 1] simple:allcaps; 2] simple:blackletter; 3] simple:bold; 4] simple:bottombraced; 5] simple:boxed; 6] simple:centre; 7] simple:cursive; 8] simple:display; 9] simple:doublestrikethrough; 10] simple:doubleunderline; 11] simple:dropcap; 12] simple:float; 13] simple:hyphen; 14] simple:inline; 15] simple:justify; 16] simple:italic; 17] simple:larger; 18] simple:left; 19] simple:leftbraced; 20] simple:letterspace; 21] simple:literal; 22] simple:normalstyle; 23] simple:normalweight; 24] simple:right; 25] simple:rightbraced; 26] simple:rotateleft; 27] simple:rotateright; 28] simple:smallcaps; 29] simple:smaller; 30] simple:strikethrough; 31] simple:subscript; 32] simple:superscript; 33] simple:topbraced; 34] simple:typewriter; 35] simple:underline; 36] simple:wavyunderline</xs:documentation>
+        <xs:documentation>1] simple:allcaps; 2] simple:blackletter; 3] simple:bold; 4] simple:bottombraced; 5] simple:boxed; 6] simple:centre; 7] simple:cursive; 8] simple:display; 9] simple:doublestrikethrough; 10] simple:doubleunderline; 11] simple:dropcap; 12] simple:float; 13] simple:hyphen; 14] simple:inline; 15] simple:justify; 16] simple:italic; 17] simle:nobreak; 18] simple:nonum; 19] simple:notoc; 20] simple:nonum:notoc; 21] simple:larger; 22] simple:left; 23] simple:leftbraced; 24] simple:letterspace; 25] simple: nohypen; 26] simple:literal; 27] simple:normalstyle; 28] simple:normalweight; 29] simple:right; 30] simple:rightbraced; 31] simple:rotateleft; 32] simple:rotateright; 33] simple:skipline; 34] simple:smallcaps; 35] simple:smaller; 36] simple: strikethrough; 37] simple:subscript; 38] simple:superscript; 39] simple:topbraced; 40] simple:typewriter; 41] simple:underline; 42] simple:wavyunderline;</xs:documentation>
       </xs:annotation>
       <xs:simpleType>
         <xs:restriction>
@@ -767,6 +766,42 @@ Suggested values include: 1] simple:allcaps; 2] simple:blackletter; 3] simple:bo
                   </xs:simpleType>
                   <xs:simpleType>
                     <xs:restriction base="xs:token">
+                      <xs:enumeration value="simple:nobreak">
+                        <xs:annotation>
+                          <xs:documentation>disable page break</xs:documentation>
+                        </xs:annotation>
+                      </xs:enumeration>
+                    </xs:restriction>
+                  </xs:simpleType>
+                  <xs:simpleType>
+                    <xs:restriction base="xs:token">
+                      <xs:enumeration value="simple:nonum">
+                        <xs:annotation>
+                          <xs:documentation>disable numbering</xs:documentation>
+                        </xs:annotation>
+                      </xs:enumeration>
+                    </xs:restriction>
+                  </xs:simpleType>
+                  <xs:simpleType>
+                    <xs:restriction base="xs:token">
+                      <xs:enumeration value="simple:notoc">
+                        <xs:annotation>
+                          <xs:documentation>omit element in TOC</xs:documentation>
+                        </xs:annotation>
+                      </xs:enumeration>
+                    </xs:restriction>
+                  </xs:simpleType>
+                  <xs:simpleType>
+                    <xs:restriction base="xs:token">
+                      <xs:enumeration value="simple:nonum:notoc">
+                        <xs:annotation>
+                          <xs:documentation>disable numbering, omit element in TOC</xs:documentation>
+                        </xs:annotation>
+                      </xs:enumeration>
+                    </xs:restriction>
+                  </xs:simpleType>
+                  <xs:simpleType>
+                    <xs:restriction base="xs:token">
                       <xs:enumeration value="simple:larger">
                         <xs:annotation>
                           <xs:documentation>larger type</xs:documentation>
@@ -797,6 +832,15 @@ Suggested values include: 1] simple:allcaps; 2] simple:blackletter; 3] simple:bo
                       <xs:enumeration value="simple:letterspace">
                         <xs:annotation>
                           <xs:documentation>larger-than-normal spacing between letters, usually for emphasis</xs:documentation>
+                        </xs:annotation>
+                      </xs:enumeration>
+                    </xs:restriction>
+                  </xs:simpleType>
+                  <xs:simpleType>
+                    <xs:restriction base="xs:token">
+                      <xs:enumeration value="simple:nohypen">
+                        <xs:annotation>
+                          <xs:documentation>disable hyphenation</xs:documentation>
                         </xs:annotation>
                       </xs:enumeration>
                     </xs:restriction>
@@ -860,6 +904,15 @@ Suggested values include: 1] simple:allcaps; 2] simple:blackletter; 3] simple:bo
                       <xs:enumeration value="simple:rotateright">
                         <xs:annotation>
                           <xs:documentation>rotated to the right</xs:documentation>
+                        </xs:annotation>
+                      </xs:enumeration>
+                    </xs:restriction>
+                  </xs:simpleType>
+                  <xs:simpleType>
+                    <xs:restriction base="xs:token">
+                      <xs:enumeration value="simple:skipline">
+                        <xs:annotation>
+                          <xs:documentation>skip line above</xs:documentation>
                         </xs:annotation>
                       </xs:enumeration>
                     </xs:restriction>
